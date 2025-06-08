@@ -1,0 +1,3 @@
+TiempoTotal: 248 ms
+MemoriaPico: 36973304 bytes
+TotalHebrasCreadas: 4016
