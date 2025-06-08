@@ -13,32 +13,52 @@
 using namespace std;
 using namespace std::chrono;
 
-struct Matrix {
+/**
+ * Estructura que representa una matriz con:
+ * - rows: número de filas
+ * - cols: número de columnas
+ * - data: vector bidimensional que almacena los valores
+ */
+struct Matriz {
     int rows, cols;
     vector<vector<int>> data;
 };
 
-Matrix readMatrix(ifstream& file) {
-    Matrix mat;
-    file >> mat.rows >> mat.cols;
+/**
+ * Lee una matriz desde un archivo de entrada
+ * @param archivo Referencia al archivo abierto
+ * @return Matriz leída con sus dimensiones y datos
+ */
+Matriz leerMatriz(ifstream& archivo) {
+    Matriz mat;
+    archivo >> mat.rows >> mat.cols;
     mat.data.resize(mat.rows, vector<int>(mat.cols));
     for (int i = 0; i < mat.rows; ++i)
         for (int j = 0; j < mat.cols; ++j)
-            file >> mat.data[i][j];
+            archivo >> mat.data[i][j];
     return mat;
 }
 
-Matrix multiplyWithForks(const Matrix& A, const Matrix& B, string filename, double& duration, long& memoryUsage) {
+/**
+ * Multiplica dos matrices usando procesos hijos (fork) y pipes para comunicación
+ * @param A Primera matriz a multiplicar
+ * @param B Segunda matriz a multiplicar
+ * @param nombreArchivo Nombre del archivo que se está procesando (para logs)
+ * @param duracion Referencia para almacenar el tiempo de ejecución
+ * @param usoMemoria Referencia para almacenar el uso de memoria
+ * @return Matriz resultante de la multiplicación A × B
+ */
+Matriz multiplicarConForks(const Matriz& A, const Matriz& B, string nombreArchivo, double& duracion, long& usoMemoria) {
     int M = A.rows, N = A.cols, P = B.cols;
-    Matrix result;
-    result.rows = M;
-    result.cols = P;
-    result.data.resize(M, vector<int>(P));
+    Matriz resultado;
+    resultado.rows = M;
+    resultado.cols = P;
+    resultado.data.resize(M, vector<int>(P));
 
     vector<int*> pipes(M);
     vector<pid_t> pids(M);
 
-    auto start = high_resolution_clock::now();
+    auto inicio = high_resolution_clock::now();
 
     for (int i = 0; i < M; ++i) {
         pipes[i] = new int[2];
@@ -57,11 +77,11 @@ Matrix multiplyWithForks(const Matrix& A, const Matrix& B, string filename, doub
             close(pipes[i][0]);
             
             for (int j = 0; j < P; ++j) {
-                int sum = 0;
+                int suma = 0;
                 for (int k = 0; k < N; ++k) {
-                    sum += A.data[i][k] * B.data[k][j];
+                    suma += A.data[i][k] * B.data[k][j];
                 }
-                if (write(pipes[i][1], &sum, sizeof(int)) == -1) {
+                if (write(pipes[i][1], &suma, sizeof(int)) == -1) {
                     cerr << "Error escribiendo en pipe: " << strerror(errno) << endl;
                     exit(1);
                 }
@@ -78,59 +98,71 @@ Matrix multiplyWithForks(const Matrix& A, const Matrix& B, string filename, doub
         close(pipes[i][1]);
         
         for (int j = 0; j < P; ++j) {
-            int val;
-            if (read(pipes[i][0], &val, sizeof(int)) != sizeof(int)) {
+            int valor;
+            if (read(pipes[i][0], &valor, sizeof(int)) != sizeof(int)) {
                 cerr << "Error leyendo pipe " << i << "," << j << endl;
-                val = 0;
+                valor = 0;
             }
-            result.data[i][j] = val;
+            resultado.data[i][j] = valor;
         }
         
         close(pipes[i][0]);
         delete[] pipes[i];
         
-        int status;
-        waitpid(pids[i], &status, 0);
+        int estado;
+        waitpid(pids[i], &estado, 0);
     }
 
-    auto end = high_resolution_clock::now();
-    duration = duration_cast<milliseconds>(end - start).count();
+    auto fin = high_resolution_clock::now();
+    duracion = duration_cast<milliseconds>(fin - inicio).count();
 
-    struct rusage usage;
-    getrusage(RUSAGE_CHILDREN, &usage);
-    memoryUsage = usage.ru_maxrss;
+    struct rusage uso;
+    getrusage(RUSAGE_CHILDREN, &uso);
+    usoMemoria = uso.ru_maxrss;
 
-    return result;
+    return resultado;
 }
 
-void saveMatrix(const Matrix& mat, const string& outputPath, double timeTaken, long memoryUsed) {
-    ofstream out(outputPath);
-    out << "# Tiempo de ejecucion (ms): " << timeTaken << endl;
-    out << "# Uso de memoria (KB): " << memoryUsed << endl;
-    out << "# Matriz resultado: " << mat.rows << "x" << mat.cols << endl;
+/**
+ * Guarda una matriz en un archivo de salida incluyendo métricas de rendimiento
+ * @param mat Matriz a guardar
+ * @param rutaSalida Ruta del archivo de salida
+ * @param tiempoEjecucion Tiempo de ejecución en milisegundos
+ * @param memoriaUsada Memoria utilizada en KB
+ */
+void guardarMatriz(const Matriz& mat, const string& rutaSalida, double tiempoEjecucion, long memoriaUsada) {
+    ofstream salida(rutaSalida);
+    salida << "# Tiempo de ejecucion (ms): " << tiempoEjecucion << endl;
+    salida << "# Uso de memoria (KB): " << memoriaUsada << endl;
+    salida << "# Matriz resultado: " << mat.rows << "x" << mat.cols << endl;
     
-    out << mat.rows << " " << mat.cols << endl;
-    for (const auto& row : mat.data) {
-        for (int val : row) out << val << " ";
-        out << endl;
+    salida << mat.rows << " " << mat.cols << endl;
+    for (const auto& fila : mat.data) {
+        for (int valor : fila) salida << valor << " ";
+        salida << endl;
     }
 }
 
-Matrix parseMatrixBlock(ifstream& file) {
-    Matrix mat;
-    string line;
+/**
+ * Lee un bloque de matriz desde un archivo, manejando líneas vacías
+ * @param archivo Referencia al archivo abierto
+ * @return Matriz leída con sus dimensiones y datos
+ */
+Matriz analizarBloqueMatriz(ifstream& archivo) {
+    Matriz mat;
+    string linea;
     
-    while (getline(file, line)) {
-        if (line.empty()) continue;
-        stringstream ss(line);
+    while (getline(archivo, linea)) {
+        if (linea.empty()) continue;
+        stringstream ss(linea);
         if (ss >> mat.rows >> mat.cols) break;
     }
     
     mat.data.resize(mat.rows, vector<int>(mat.cols));
     for (int i = 0; i < mat.rows; ++i) {
-        while (getline(file, line) && line.empty());
+        while (getline(archivo, linea) && linea.empty());
         
-        stringstream ss(line);
+        stringstream ss(linea);
         for (int j = 0; j < mat.cols; ++j) {
             if (!(ss >> mat.data[i][j])) {
                 cerr << "Error leyendo elemento [" << i << "][" << j << "]" << endl;
@@ -141,32 +173,36 @@ Matrix parseMatrixBlock(ifstream& file) {
     return mat;
 }
 
+/**
+ * Función principal que procesa todos los archivos de matrices en un directorio
+ * @return 0 si termina correctamente, 1 si hay error al abrir el directorio
+ */
 int main() {
-    string inputFolder = "easy/";
-    string outputFolder = "Salidafork/";
-    system(("mkdir -p " + outputFolder).c_str());
+    string directorioEntrada = "easy/";
+    string directorioSalida = "Salidafork/";
+    system(("mkdir -p " + directorioSalida).c_str());
 
-    DIR* dir = opendir(inputFolder.c_str());
+    DIR* dir = opendir(directorioEntrada.c_str());
     if (!dir) {
-        cerr << "No se pudo abrir la carpeta: " << inputFolder << endl;
+        cerr << "No se pudo abrir la carpeta: " << directorioEntrada << endl;
         return 1;
     }
 
-    struct dirent* entry;
-    while ((entry = readdir(dir)) != NULL) {
-        string filename = entry->d_name;
-        if (filename.find(".txt") == string::npos) continue;
+    struct dirent* entrada;
+    while ((entrada = readdir(dir)) != NULL) {
+        string nombreArchivo = entrada->d_name;
+        if (nombreArchivo.find(".txt") == string::npos) continue;
 
-        string inputPath = inputFolder + filename;
-        ifstream file(inputPath);
-        if (!file.is_open()) {
-            cerr << "No se pudo abrir el archivo: " << inputPath << endl;
+        string rutaEntrada = directorioEntrada + nombreArchivo;
+        ifstream archivo(rutaEntrada);
+        if (!archivo.is_open()) {
+            cerr << "No se pudo abrir el archivo: " << rutaEntrada << endl;
             continue;
         }
 
-        cout << "Procesando archivo: " << filename << endl;
-        Matrix A = parseMatrixBlock(file);
-        Matrix B = parseMatrixBlock(file);
+        cout << "Procesando archivo: " << nombreArchivo << endl;
+        Matriz A = analizarBloqueMatriz(archivo);
+        Matriz B = analizarBloqueMatriz(archivo);
         
         if (A.cols != B.rows) {
             cerr << "Error: Las matrices no son compatibles para multiplicación (" 
@@ -174,12 +210,12 @@ int main() {
             continue;
         }
 
-        double timeTaken;
-        long memoryUsed;
-        Matrix result = multiplyWithForks(A, B, filename, timeTaken, memoryUsed);
+        double tiempoEjecucion;
+        long memoriaUsada;
+        Matriz resultado = multiplicarConForks(A, B, nombreArchivo, tiempoEjecucion, memoriaUsada);
 
-        string outputPath = outputFolder + filename;
-        saveMatrix(result, outputPath, timeTaken, memoryUsed);
+        string rutaSalida = directorioSalida + nombreArchivo;
+        guardarMatriz(resultado, rutaSalida, tiempoEjecucion, memoriaUsada);
     }
 
     closedir(dir);
