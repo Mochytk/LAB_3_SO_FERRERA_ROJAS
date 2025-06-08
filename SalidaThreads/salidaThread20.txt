@@ -1,0 +1,8 @@
+# Tiempo: 5 ms
+# Memoria Utilizada: -11255560 bytes
+# Hebras Creadas: 8
+4 3
+65 195 169
+49 144 131
+11 60 42
+43 112 113

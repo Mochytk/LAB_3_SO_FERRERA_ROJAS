@@ -1,0 +1,6 @@
+# Tiempo: 1 ms
+# Memoria Utilizada: 895280 bytes
+# Hebras Creadas: 8
+2 6
+52 55 42 43 106 117
+79 52 58 81 47 68

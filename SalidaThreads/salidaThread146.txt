@@ -1,0 +1,8 @@
+# Tiempo: 3 ms
+# Memoria Utilizada: 1883840 bytes
+# Hebras Creadas: 8
+4 3
+34 92 61
+48 39 58
+44 38 42
+50 55 51
