@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2056
+# Matriz resultado: 3x6
+3 6
+97 108 101 32 116 111 
+39 89 18 87 106 59 
+104 130 97 27 89 122 

@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2056
+# Matriz resultado: 3x5
+3 5
+165 114 126 165 80 
+161 96 127 156 102 
+226 123 207 201 144 

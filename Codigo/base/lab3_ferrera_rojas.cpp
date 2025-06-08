@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/resource.h>
 #include <chrono>
-#include <cstring>  // para strerror
+#include <cstring>
 
 using namespace std;
 using namespace std::chrono;
@@ -35,13 +35,12 @@ Matrix multiplyWithForks(const Matrix& A, const Matrix& B, string filename, doub
     result.cols = P;
     result.data.resize(M, vector<int>(P));
 
-    int total = M * P;
-    vector<int*> pipes(total);
-    vector<pid_t> pids(total);
+    vector<int*> pipes(M);
+    vector<pid_t> pids(M);
 
     auto start = high_resolution_clock::now();
 
-    for (int i = 0; i < total; ++i) {
+    for (int i = 0; i < M; ++i) {
         pipes[i] = new int[2];
         if (pipe(pipes[i]) == -1) {
             cerr << "Error creando pipe: " << strerror(errno) << endl;
@@ -55,70 +54,61 @@ Matrix multiplyWithForks(const Matrix& A, const Matrix& B, string filename, doub
         }
 
         if (pid == 0) {
-            // Proceso hijo
-            close(pipes[i][0]); // Cierra el extremo de lectura
+            close(pipes[i][0]);
             
-            int row = i / P;
-            int col = i % P;
-            int sum = 0;
-            for (int k = 0; k < N; ++k) {
-                sum += A.data[row][k] * B.data[k][col];
+            for (int j = 0; j < P; ++j) {
+                int sum = 0;
+                for (int k = 0; k < N; ++k) {
+                    sum += A.data[i][k] * B.data[k][j];
+                }
+                if (write(pipes[i][1], &sum, sizeof(int)) == -1) {
+                    cerr << "Error escribiendo en pipe: " << strerror(errno) << endl;
+                    exit(1);
+                }
             }
-
-            // Escribe el resultado en el pipe
-            if (write(pipes[i][1], &sum, sizeof(int)) == -1) {
-                cerr << "Error escribiendo en pipe: " << strerror(errno) << endl;
-            }
+            
             close(pipes[i][1]);
             exit(0);
         } else {
-            // Proceso padre
             pids[i] = pid;
-            // No cerramos el extremo de escritura aquí todavía
         }
     }
 
-    // Esperar hijos y leer pipes
-    for (int i = 0; i < total; ++i) {
-        int status;
-        waitpid(pids[i], &status, 0); // Espera al hijo específico
+    for (int i = 0; i < M; ++i) {
+        close(pipes[i][1]);
         
-        if (WIFEXITED(status)) {  // Aquí estaba el error - faltaba el paréntesis de cierre
+        for (int j = 0; j < P; ++j) {
             int val;
-            // Ahora cerramos el extremo de escritura antes de leer
-            close(pipes[i][1]);
-            
-            ssize_t bytes_read = read(pipes[i][0], &val, sizeof(int));
-            if (bytes_read != sizeof(int)) {
-                cerr << "Error leyendo pipe " << i << ": " 
-                     << (bytes_read == -1 ? strerror(errno) : "tamaño incorrecto") << endl;
-                val = 0; // fallback
+            if (read(pipes[i][0], &val, sizeof(int)) != sizeof(int)) {
+                cerr << "Error leyendo pipe " << i << "," << j << endl;
+                val = 0;
             }
-            
-            int row = i / P;
-            int col = i % P;
-            result.data[row][col] = val;
-        } else {
-            cerr << "Proceso hijo " << pids[i] << " terminó anormalmente" << endl;
+            result.data[i][j] = val;
         }
         
         close(pipes[i][0]);
         delete[] pipes[i];
+        
+        int status;
+        waitpid(pids[i], &status, 0);
     }
 
     auto end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start).count();
 
-    // Medición de memoria mejorada
     struct rusage usage;
-    getrusage(RUSAGE_CHILDREN, &usage); // Cambiado a RUSAGE_CHILDREN
+    getrusage(RUSAGE_CHILDREN, &usage);
     memoryUsage = usage.ru_maxrss;
 
     return result;
 }
 
-void saveMatrix(const Matrix& mat, const string& outputPath) {
+void saveMatrix(const Matrix& mat, const string& outputPath, double timeTaken, long memoryUsed) {
     ofstream out(outputPath);
+    out << "# Tiempo de ejecucion (ms): " << timeTaken << endl;
+    out << "# Uso de memoria (KB): " << memoryUsed << endl;
+    out << "# Matriz resultado: " << mat.rows << "x" << mat.cols << endl;
+    
     out << mat.rows << " " << mat.cols << endl;
     for (const auto& row : mat.data) {
         for (int val : row) out << val << " ";
@@ -127,22 +117,34 @@ void saveMatrix(const Matrix& mat, const string& outputPath) {
 }
 
 Matrix parseMatrixBlock(ifstream& file) {
-    string line;
-    while (getline(file, line) && line.empty()); // saltar líneas vacías
-    stringstream ss(line);
     Matrix mat;
-    ss >> mat.rows >> mat.cols;
+    string line;
+    
+    while (getline(file, line)) {
+        if (line.empty()) continue;
+        stringstream ss(line);
+        if (ss >> mat.rows >> mat.cols) break;
+    }
+    
     mat.data.resize(mat.rows, vector<int>(mat.cols));
-    for (int i = 0; i < mat.rows; ++i)
-        for (int j = 0; j < mat.cols; ++j)
-            file >> mat.data[i][j];
+    for (int i = 0; i < mat.rows; ++i) {
+        while (getline(file, line) && line.empty());
+        
+        stringstream ss(line);
+        for (int j = 0; j < mat.cols; ++j) {
+            if (!(ss >> mat.data[i][j])) {
+                cerr << "Error leyendo elemento [" << i << "][" << j << "]" << endl;
+                mat.data[i][j] = 0;
+            }
+        }
+    }
     return mat;
 }
 
 int main() {
     string inputFolder = "easy/";
     string outputFolder = "Salidafork/";
-    system(("mkdir -p " + outputFolder).c_str()); // crear carpeta si no existe (Linux)
+    system(("mkdir -p " + outputFolder).c_str());
 
     DIR* dir = opendir(inputFolder.c_str());
     if (!dir) {
@@ -165,15 +167,19 @@ int main() {
         cout << "Procesando archivo: " << filename << endl;
         Matrix A = parseMatrixBlock(file);
         Matrix B = parseMatrixBlock(file);
+        
+        if (A.cols != B.rows) {
+            cerr << "Error: Las matrices no son compatibles para multiplicación (" 
+                << A.rows << "x" << A.cols << " * " << B.rows << "x" << B.cols << ")" << endl;
+            continue;
+        }
+
         double timeTaken;
         long memoryUsed;
         Matrix result = multiplyWithForks(A, B, filename, timeTaken, memoryUsed);
 
         string outputPath = outputFolder + filename;
-        saveMatrix(result, outputPath);
-
-        cout << "Tiempo de ejecución (ms): " << timeTaken << endl;
-        cout << "Uso de memoria (KB): " << memoryUsed << endl << endl;
+        saveMatrix(result, outputPath, timeTaken, memoryUsed);
     }
 
     closedir(dir);

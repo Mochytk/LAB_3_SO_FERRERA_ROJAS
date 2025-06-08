@@ -1,0 +1,6 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2056
+# Matriz resultado: 2x3
+2 3
+50 73 70 
+51 94 121 
