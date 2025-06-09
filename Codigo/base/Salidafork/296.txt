@@ -1,7 +1,0 @@
-# Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 2244
-# Matriz resultado: 3x3
-3 3
-27 27 36 
-6 18 15 
-30 54 54 

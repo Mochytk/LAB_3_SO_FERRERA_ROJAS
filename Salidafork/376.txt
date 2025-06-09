@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 1032192
+# Matriz resultado: 3x3
+3 3
+86 63 129 
+53 68 92 
+72 60 77 

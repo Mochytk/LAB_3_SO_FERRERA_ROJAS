@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 1032192
+# Matriz resultado: 5x6
+5 6
+68 26 64 30 8 44 
+56 104 116 111 110 91 
+86 85 155 99 82 94 
+42 71 147 69 118 106 
+70 92 133 99 111 91 

@@ -1,0 +1,6 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 1032192
+# Matriz resultado: 2x6
+2 6
+45 42 69 138 81 63 
+64 65 41 138 120 97 

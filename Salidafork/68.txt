@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 1032192
+# Matriz resultado: 4x3
+4 3
+35 63 63 
+31 48 46 
+91 110 93 
+74 89 77 
