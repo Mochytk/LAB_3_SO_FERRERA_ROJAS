@@ -179,7 +179,7 @@ Matriz analizarBloqueMatriz(ifstream& archivo) {
  */
 int main() {
     string directorioEntrada = "easy/";
-    string directorioSalida = "Salidafork/";
+    string directorioSalida = "Salidafork/easy/";
     system(("mkdir -p " + directorioSalida).c_str());
 
     DIR* dir = opendir(directorioEntrada.c_str());

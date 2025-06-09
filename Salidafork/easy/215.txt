@@ -1,0 +1,6 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2216
+# Matriz resultado: 2x5
+2 5
+168 113 52 47 133 
+97 69 26 27 76 

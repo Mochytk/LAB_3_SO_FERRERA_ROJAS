@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 3
+# Uso de memoria (KB): 2216
+# Matriz resultado: 6x2
+6 2
+20 10 
+9 37 
+17 41 
+10 44 
+26 52 
+20 36 

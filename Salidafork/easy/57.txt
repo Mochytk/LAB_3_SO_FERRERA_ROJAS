@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2216
+# Matriz resultado: 6x4
+6 4
+60 107 103 117 
+97 146 86 111 
+22 47 74 75 
+62 98 90 100 
+64 88 63 72 
+40 67 66 73 

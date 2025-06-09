@@ -1,8 +1,0 @@
-# Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 3072
-# Matriz resultado: 4x4
-4 4
-90 143 44 89 
-62 70 66 59 
-128 197 128 114 
-140 174 132 122 

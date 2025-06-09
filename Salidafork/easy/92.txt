@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2216
+# Matriz resultado: 3x5
+3 5
+72 78 30 52 32 
+34 52 42 76 8 
+72 92 36 88 32 

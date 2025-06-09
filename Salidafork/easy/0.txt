@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 5
+# Uso de memoria (KB): 2204
+# Matriz resultado: 4x4
+4 4
+57 30 33 63 
+57 30 69 87 
+48 30 42 72 
+75 36 114 123 

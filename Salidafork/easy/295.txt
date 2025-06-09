@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2216
+# Matriz resultado: 4x4
+4 4
+36 22 18 57 
+10 6 4 13 
+12 8 12 36 
+34 22 28 85 

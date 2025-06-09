@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2216
+# Matriz resultado: 5x6
+5 6
+44 153 95 72 114 149 
+34 144 79 71 95 149 
+38 143 101 43 99 134 
+26 88 92 30 81 110 
+59 157 132 80 153 179 

@@ -1,9 +1,0 @@
-# Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 3072
-# Matriz resultado: 5x6
-5 6
-75 54 66 53 83 82 
-133 92 111 81 128 139 
-86 72 105 81 81 154 
-48 29 82 46 78 44 
-111 76 73 50 72 120 
