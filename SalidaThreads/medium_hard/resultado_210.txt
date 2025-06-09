@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 3
+2895 1920 1905
+1930 1280 1270

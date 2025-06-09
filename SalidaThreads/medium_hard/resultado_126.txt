@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 2
+105791 90406
+81702 68245

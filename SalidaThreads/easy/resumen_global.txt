@@ -1,5 +1,5 @@
 Dificultad: easy
 Archivos procesados: 500
-Tiempo total: 322 ms
-Memoria peak: 287152128 bytes
+Tiempo total: 345 ms
+Memoria peak: 272355344 bytes
 Cantidad de hebras creadas: 6024

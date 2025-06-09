@@ -1,0 +1,6 @@
+# Posible: true
+# Simétrica: false
+3 3
+236 370 631
+288 471 796
+180 249 437

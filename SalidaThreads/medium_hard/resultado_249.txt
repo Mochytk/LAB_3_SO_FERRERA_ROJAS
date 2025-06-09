@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 2
+1939 1302
+1637 1094

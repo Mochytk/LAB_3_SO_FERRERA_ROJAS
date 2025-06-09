@@ -1,0 +1,6 @@
+# Posible: true
+# Simétrica: false
+3 2
+12663 25299
+15624 31104
+4260 8532

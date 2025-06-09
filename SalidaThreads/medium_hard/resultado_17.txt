@@ -1,0 +1,6 @@
+# Posible: true
+# Simétrica: false
+3 2
+9358 17018
+6612 11172
+10772 18688

@@ -1,5 +1,5 @@
-# Tiempo de ejecucion (ms): 0
-# Uso de memoria (KB): 1032192
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3072
 # Matriz resultado: 6x5
 6 5
 190 170 208 64 78 

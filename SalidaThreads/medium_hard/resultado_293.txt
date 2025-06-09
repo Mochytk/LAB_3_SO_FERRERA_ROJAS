@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 3
+315 189 443
+893 619 1197

@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 3
+1076 943 1518
+1827 1582 2542

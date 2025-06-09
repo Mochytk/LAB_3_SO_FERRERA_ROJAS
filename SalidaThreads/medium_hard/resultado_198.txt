@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 2
+105374 80295
+160995 127488

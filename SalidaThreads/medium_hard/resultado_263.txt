@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 4
+826 1012 1597 792
+904 992 1114 532

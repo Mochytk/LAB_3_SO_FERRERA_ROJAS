@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 2
+2355 1485
+3610 2338

@@ -1,6 +1,7 @@
-# Tiempo: 7 ms
-# Memoria Utilizada: 8891824 bytes
+# Tiempo: 13 ms
+# Memoria Utilizada: 10737808 bytes
 # Hebras Creadas: 12
+# Simétrica: No
 5 3
 128 118 112
 110 98 90

@@ -1,5 +1,5 @@
 Dificultad: medium
 Archivos procesados: 300
-Tiempo total: 316 ms
-Memoria peak: 237851312 bytes
+Tiempo total: 324 ms
+Memoria peak: 189747328 bytes
 Cantidad de hebras creadas: 7224

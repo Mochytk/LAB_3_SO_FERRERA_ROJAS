@@ -1,0 +1,5 @@
+# Posible: true
+# Simétrica: false
+2 3
+723 907 591
+505 697 437
