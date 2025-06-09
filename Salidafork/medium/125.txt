@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 11
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x4
+# Es simetrica: NO
+3 4
+2644 1384 1321 1304 
+2583 964 1790 1181 
+3440 1688 1901 1684 

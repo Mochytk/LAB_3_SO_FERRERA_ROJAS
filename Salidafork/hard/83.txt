@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 3x4
+# Es simetrica: NO
+3 4
+16884 21116 20228 33148 
+26537 33377 31825 52317 
+23527 29801 28251 46625 

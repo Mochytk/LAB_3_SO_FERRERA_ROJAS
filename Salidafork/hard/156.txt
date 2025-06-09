@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 2x2
+# Es simetrica: NO
+2 2
+17395 9429 
+18155 10020 

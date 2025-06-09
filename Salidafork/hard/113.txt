@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 22
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+15982 12758 16193 
+9996 8274 9919 
+7590 6000 7732 
+20716 16394 21091 
+13928 11152 14088 

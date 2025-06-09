@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x2
+# Es simetrica: NO
+4 2
+2001 3229 
+3168 5705 
+3098 5469 
+2454 4236 

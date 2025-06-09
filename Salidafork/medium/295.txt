@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x5
+# Es simetrica: NO
+5 5
+1565 381 2020 775 720 
+813 294 1198 423 200 
+1757 528 2418 887 632 
+783 339 1329 453 72 
+966 312 1492 546 272 

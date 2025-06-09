@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 3
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x6
+# Es simetrica: NO
+4 6
+1102 0 1178 256 1729 2165 
+492 0 772 192 1018 1122 
+486 0 618 144 861 1017 
+576 0 800 192 1088 1248 

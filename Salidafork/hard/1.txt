@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 4x5
+# Es simetrica: NO
+4 5
+61235 83324 73411 53712 77401 
+60361 83488 73059 53884 76691 
+77721 106458 93564 68694 98481 
+24397 32410 28889 20910 30668 

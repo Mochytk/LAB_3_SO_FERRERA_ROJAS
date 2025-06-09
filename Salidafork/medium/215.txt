@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 5
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x2
+# Es simetrica: NO
+6 2
+4381 3244 
+3025 2567 
+4626 3370 
+2248 2097 
+2262 1575 
+3803 3226 

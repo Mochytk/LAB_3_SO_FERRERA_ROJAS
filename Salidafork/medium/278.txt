@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+591 245 490 
+1239 814 1367 
+1681 786 1863 
+1172 701 1387 
+1161 715 1448 

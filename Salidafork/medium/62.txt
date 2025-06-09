@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+594 408 1110 
+637 504 1197 
+781 552 1461 
+751 472 1399 
+324 248 608 

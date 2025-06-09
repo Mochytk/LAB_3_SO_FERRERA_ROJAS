@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+1254 2144 
+4425 7562 
+3411 5734 
+4597 7686 
+3148 5272 

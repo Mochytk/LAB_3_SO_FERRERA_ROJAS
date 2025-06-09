@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 2x3
+# Es simetrica: NO
+2 3
+966 236 224 
+1038 248 182 

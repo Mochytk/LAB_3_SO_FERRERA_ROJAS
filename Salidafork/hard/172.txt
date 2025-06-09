@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 3528
+# Matriz resultado: 6x2
+# Es simetrica: NO
+6 2
+121262 118162 
+115317 116583 
+100548 100287 
+140821 139626 
+62077 59475 
+64690 68225 

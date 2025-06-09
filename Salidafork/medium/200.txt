@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+3328 4150 
+2540 3255 
+2509 3138 
+3438 4271 
+2576 3448 

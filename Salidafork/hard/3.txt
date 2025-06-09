@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 3528
+# Matriz resultado: 6x3
+# Es simetrica: NO
+6 3
+45815 31931 29103 
+76012 52794 47916 
+43334 30093 27342 
+29861 20704 18949 
+52639 36540 33103 
+74667 51918 47243 

@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+37071 41603 26101 
+43667 48671 31405 
+29085 31745 16786 
+30586 33298 16559 
+41796 46160 26062 

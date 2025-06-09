@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 5
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x4
+# Es simetrica: NO
+6 4
+1029 784 1711 1854 
+864 497 1374 1519 
+298 338 550 566 
+789 501 1261 1393 
+775 330 1169 1328 
+1609 1222 2699 2908 

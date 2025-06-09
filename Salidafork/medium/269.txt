@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+359 365 296 
+1188 1188 988 
+1743 1653 1488 
+842 866 690 
+901 787 798 

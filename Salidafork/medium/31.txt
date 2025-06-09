@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+1335 784 
+715 412 
+380 222 
+2235 1300 
+875 512 

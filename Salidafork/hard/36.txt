@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 6x3
+# Es simetrica: NO
+6 3
+43314 55156 56291 
+42922 56992 58346 
+17275 20417 20683 
+39085 51251 52463 
+46313 61033 62479 
+63588 81450 83162 

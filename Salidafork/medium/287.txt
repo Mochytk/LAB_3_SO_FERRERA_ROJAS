@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x6
+# Es simetrica: NO
+3 6
+2795 1190 1936 897 1601 685 
+3179 1175 2132 988 1741 675 
+2998 1028 1927 937 1738 618 

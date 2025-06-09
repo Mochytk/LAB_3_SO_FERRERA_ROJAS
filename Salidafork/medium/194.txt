@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x4
+# Es simetrica: NO
+4 4
+982 2242 2546 2474 
+482 1124 1200 1167 
+326 770 856 814 
+546 1240 1506 1441 

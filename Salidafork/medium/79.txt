@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x2
+# Es simetrica: NO
+3 2
+36 0 
+40 0 
+20 0 

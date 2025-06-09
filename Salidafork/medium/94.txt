@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x4
+# Es simetrica: NO
+5 4
+976 578 241 649 
+2194 1310 546 1438 
+1829 1117 464 1166 
+2115 1303 542 1312 
+2316 1400 584 1472 

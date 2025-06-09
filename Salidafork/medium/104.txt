@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 7
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x5
+# Es simetrica: NO
+5 5
+2803 811 2546 2942 3502 
+590 182 620 680 820 
+1101 261 862 1050 1314 
+2234 722 2093 2401 2726 
+2200 670 2075 2368 2780 

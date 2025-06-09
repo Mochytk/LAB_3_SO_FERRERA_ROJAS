@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x4
+# Es simetrica: NO
+3 4
+1616 992 984 1480 
+972 588 600 840 
+2750 1678 1684 2460 

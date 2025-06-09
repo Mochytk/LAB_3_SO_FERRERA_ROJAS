@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x4
+# Es simetrica: NO
+6 4
+1701 1777 1107 1324 
+1701 1780 1102 1356 
+705 753 455 712 
+1044 1089 673 800 
+596 620 392 436 
+509 525 343 324 

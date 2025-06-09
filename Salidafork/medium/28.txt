@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x2
+# Es simetrica: NO
+4 2
+3480 2272 
+3377 1913 
+3796 2064 
+3886 2646 

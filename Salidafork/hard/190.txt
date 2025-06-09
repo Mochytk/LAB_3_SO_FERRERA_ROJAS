@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+17319 12549 21307 
+13966 10066 17158 
+11498 8180 14078 
+14035 9991 17187 
+13929 9933 17065 

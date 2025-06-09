@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 2x5
+# Es simetrica: NO
+2 5
+2138 938 1998 986 1797 
+1626 921 1727 817 1278 

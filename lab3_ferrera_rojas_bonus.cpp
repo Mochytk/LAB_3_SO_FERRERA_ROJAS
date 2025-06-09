@@ -13,22 +13,11 @@
 using namespace std;
 using namespace std::chrono;
 
-/**
- * Estructura que representa una matriz con:
- * - rows: número de filas
- * - cols: número de columnas
- * - data: vector bidimensional que almacena los valores
- */
 struct Matriz {
     int rows, cols;
     vector<vector<int>> data;
 };
 
-/**
- * Verifica si una matriz es simétrica (A = A^T)
- * @param mat Matriz a verificar
- * @return true si es simétrica, false en caso contrario
- */
 bool esSimetrica(const Matriz& mat) {
     if (mat.rows != mat.cols) return false;
     
@@ -42,11 +31,6 @@ bool esSimetrica(const Matriz& mat) {
     return true;
 }
 
-/**
- * Lee una matriz desde un archivo de entrada
- * @param archivo Referencia al archivo abierto
- * @return Matriz leída con sus dimensiones y datos
- */
 Matriz leerMatriz(ifstream& archivo) {
     Matriz mat;
     archivo >> mat.rows >> mat.cols;
@@ -57,15 +41,6 @@ Matriz leerMatriz(ifstream& archivo) {
     return mat;
 }
 
-/**
- * Multiplica dos matrices usando procesos hijos (fork) y pipes para comunicación
- * @param A Primera matriz a multiplicar
- * @param B Segunda matriz a multiplicar
- * @param nombreArchivo Nombre del archivo que se está procesando (para logs)
- * @param duracion Referencia para almacenar el tiempo de ejecución
- * @param usoMemoria Referencia para almacenar el uso de memoria
- * @return Matriz resultante de la multiplicación A × B
- */
 Matriz multiplicarConForks(const Matriz& A, const Matriz& B, string nombreArchivo, double& duracion, long& usoMemoria) {
     int M = A.rows, N = A.cols, P = B.cols;
     Matriz resultado;
@@ -141,18 +116,17 @@ Matriz multiplicarConForks(const Matriz& A, const Matriz& B, string nombreArchiv
     return resultado;
 }
 
-/**
- * Guarda una matriz en un archivo de salida incluyendo métricas y análisis
- * @param mat Matriz a guardar
- * @param rutaSalida Ruta del archivo de salida
- * @param tiempoEjecucion Tiempo de ejecución en milisegundos
- * @param memoriaUsada Memoria utilizada en KB
- * @param esSimetricaResultado Resultado del análisis de simetría
- */
-void guardarMatriz(const Matriz& mat, const string& rutaSalida, double tiempoEjecucion, long memoriaUsada, bool esSimetricaResultado) {
+void guardarMatriz(const Matriz& mat, const string& rutaSalida, double tiempoEjecucion, long memoriaUsada, bool esSimetricaResultado, bool multiplicable) {
     ofstream salida(rutaSalida);
     salida << "# Tiempo de ejecucion (ms): " << tiempoEjecucion << endl;
     salida << "# Uso de memoria (KB): " << memoriaUsada << endl;
+    
+    if (!multiplicable) {
+        salida << "# Error: Las matrices no son compatibles para multiplicacion" << endl;
+        salida.close();
+        return;
+    }
+
     salida << "# Matriz resultado: " << mat.rows << "x" << mat.cols << endl;
     salida << "# Es simetrica: " << (esSimetricaResultado ? "SI" : "NO") << endl;
     
@@ -163,11 +137,6 @@ void guardarMatriz(const Matriz& mat, const string& rutaSalida, double tiempoEje
     }
 }
 
-/**
- * Lee un bloque de matriz desde un archivo, manejando líneas vacías
- * @param archivo Referencia al archivo abierto
- * @return Matriz leída con sus dimensiones y datos
- */
 Matriz analizarBloqueMatriz(ifstream& archivo) {
     Matriz mat;
     string linea;
@@ -193,19 +162,13 @@ Matriz analizarBloqueMatriz(ifstream& archivo) {
     return mat;
 }
 
-/**
- * Función principal que procesa todos los archivos de matrices en un directorio
- * @return 0 si termina correctamente, 1 si hay error al abrir el directorio
- */
-int main() {
-    string directorioEntrada = "bonus/";
-    string directorioSalida = "SalidaBonus/";
+void procesarDirectorio(const string& directorioEntrada, const string& directorioSalida) {
     system(("mkdir -p " + directorioSalida).c_str());
 
     DIR* dir = opendir(directorioEntrada.c_str());
     if (!dir) {
         cerr << "No se pudo abrir la carpeta: " << directorioEntrada << endl;
-        return 1;
+        return;
     }
 
     struct dirent* entrada;
@@ -248,29 +211,45 @@ int main() {
             }
         }
         
-        if (error) continue;
-
-        // Multiplicación en cadena
+        // Variables para resultados
         double tiempoTotal = 0;
         long memoriaMaxima = 0;
-        Matriz resultado = matrices[0];
-        
-        for (size_t i = 1; i < matrices.size(); ++i) {
-            double tiempoParcial;
-            long memoriaParcial;
+        Matriz resultado;
+        bool multiplicable = !error && matrices.size() >= 2;
+        bool simetrica = false;
+
+        if (multiplicable) {
+            // Multiplicación en cadena
+            resultado = matrices[0];
             
-            resultado = multiplicarConForks(resultado, matrices[i], nombreArchivo, tiempoParcial, memoriaParcial);
-            tiempoTotal += tiempoParcial;
-            memoriaMaxima = max(memoriaMaxima, memoriaParcial);
+            for (size_t i = 1; i < matrices.size(); ++i) {
+                double tiempoParcial;
+                long memoriaParcial;
+                
+                resultado = multiplicarConForks(resultado, matrices[i], nombreArchivo, tiempoParcial, memoriaParcial);
+                tiempoTotal += tiempoParcial;
+                memoriaMaxima = max(memoriaMaxima, memoriaParcial);
+            }
+
+            // Análisis de simetría solo si la multiplicación fue posible
+            simetrica = esSimetrica(resultado);
         }
 
-        // Análisis de simetría
-        bool simetrica = esSimetrica(resultado);
-
         string rutaSalida = directorioSalida + nombreArchivo;
-        guardarMatriz(resultado, rutaSalida, tiempoTotal, memoriaMaxima, simetrica);
+        guardarMatriz(resultado, rutaSalida, tiempoTotal, memoriaMaxima, simetrica, multiplicable);
     }
 
     closedir(dir);
+}
+
+int main() {
+    // Procesar carpeta medium
+    cout << "Procesando carpeta medium..." << endl;
+    procesarDirectorio("medium/", "Salidafork/medium/");
+    
+    // Procesar carpeta hard
+    cout << "\nProcesando carpeta hard..." << endl;
+    procesarDirectorio("hard/", "Salidafork/hard/");
+
     return 0;
 }

@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 4x2
+# Es simetrica: NO
+4 2
+6544 8149 
+18872 24044 
+23522 29759 
+1860 2286 

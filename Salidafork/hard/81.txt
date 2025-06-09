@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 2x6
+# Es simetrica: NO
+2 6
+42492 7364 67882 74427 67871 31753 
+35754 6208 56339 62021 56418 26853 

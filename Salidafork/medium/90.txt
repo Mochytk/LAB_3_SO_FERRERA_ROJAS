@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x4
+# Es simetrica: NO
+6 4
+4190 4175 3822 3053 
+5180 5455 4916 3838 
+4738 4660 4103 3479 
+2834 2956 2706 2139 
+5136 5523 4764 3958 
+3226 2940 2775 2364 

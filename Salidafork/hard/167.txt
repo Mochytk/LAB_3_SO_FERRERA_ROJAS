@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+5522 12842 
+9279 21591 
+7912 18400 
+9413 21989 
+6082 13978 

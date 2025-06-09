@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 2x4
+# Es simetrica: NO
+2 4
+3043 4222 6872 3692 
+3991 5539 9014 4844 

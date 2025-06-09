@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+64941 39858 45912 
+20176 12255 14491 
+40025 24435 27685 
+62173 37356 42970 
+48572 30222 35118 

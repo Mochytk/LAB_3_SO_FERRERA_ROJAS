@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x5
+# Es simetrica: NO
+3 5
+1168 2494 1735 1523 1483 
+1238 2641 1803 1542 1527 
+1080 2434 1732 1614 1636 

@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 7
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x5
+# Es simetrica: NO
+6 5
+190 489 358 474 213 
+216 484 356 436 228 
+458 963 710 834 471 
+240 592 434 562 264 
+266 587 432 524 279 
+272 736 538 730 312 

@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x4
+# Es simetrica: NO
+5 4
+5461 6212 11709 4698 
+3006 3297 6474 2658 
+5589 6708 11901 4602 
+6683 7798 14283 5634 
+3074 3382 6618 2712 

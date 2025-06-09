@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x5
+# Es simetrica: NO
+4 5
+805 865 975 1095 1155 
+1127 1211 1365 1533 1617 
+322 346 390 438 462 
+258 498 558 834 750 

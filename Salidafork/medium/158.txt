@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 15
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x4
+# Es simetrica: NO
+5 4
+922 904 580 502 
+898 1104 588 534 
+448 651 252 273 
+1100 1209 735 633 
+494 655 289 293 

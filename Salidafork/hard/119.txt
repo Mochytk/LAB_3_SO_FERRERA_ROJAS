@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 8
+# Uso de memoria (KB): 3528
+# Matriz resultado: 4x3
+# Es simetrica: NO
+4 3
+14862 38544 60564 
+13340 34588 54413 
+16772 43480 68450 
+18294 47436 74601 

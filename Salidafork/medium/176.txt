@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x3
+# Es simetrica: NO
+4 3
+729 2058 643 
+349 1002 319 
+511 1542 517 
+471 1338 421 

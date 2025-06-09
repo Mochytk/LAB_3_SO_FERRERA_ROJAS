@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 8
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x5
+# Es simetrica: NO
+3 5
+3720 8350 6265 6470 2971 
+3370 8124 6100 6280 3172 
+2731 7282 5189 5799 3091 

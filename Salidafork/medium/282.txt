@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+972 456 
+1425 639 
+901 415 
+1235 557 
+1818 822 

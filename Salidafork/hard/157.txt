@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 3x3
+# Es simetrica: NO
+3 3
+7848 5886 14904 
+9184 6888 17152 
+11392 8544 21176 

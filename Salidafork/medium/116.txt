@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 3
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+38 30 
+190 170 
+95 85 
+133 120 
+209 185 

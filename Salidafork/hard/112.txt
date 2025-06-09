@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+20949 13615 
+19359 12271 
+32161 20783 
+24218 15834 
+13959 8981 

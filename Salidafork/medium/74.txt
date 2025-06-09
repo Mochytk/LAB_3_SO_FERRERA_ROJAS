@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x3
+# Es simetrica: NO
+3 3
+1932 2995 3698 
+2364 3829 4391 
+2466 3924 4341 

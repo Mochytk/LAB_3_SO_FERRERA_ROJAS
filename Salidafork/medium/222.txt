@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x6
+# Es simetrica: NO
+3 6
+1296 1101 888 459 675 739 
+1974 1740 1436 776 874 1350 
+855 735 622 307 440 494 

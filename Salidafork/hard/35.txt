@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 6x3
+# Es simetrica: NO
+6 3
+12969 3384 12348 
+9369 2424 8940 
+10087 2632 9604 
+7564 1984 7192 
+2164 544 2080 
+2882 752 2744 

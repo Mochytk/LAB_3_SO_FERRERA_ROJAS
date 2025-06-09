@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 4x2
+# Es simetrica: NO
+4 2
+28430 52708 
+25670 44068 
+27922 50086 
+28250 52054 

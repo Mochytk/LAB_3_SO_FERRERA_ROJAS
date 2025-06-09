@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 5
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+177 185 236 
+595 600 721 
+388 390 466 
+517 510 589 
+263 265 318 

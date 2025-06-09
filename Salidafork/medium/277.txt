@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 3
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x5
+# Es simetrica: NO
+6 5
+761 558 402 682 181 
+802 496 579 979 92 
+1443 1039 807 1355 321 
+1768 1229 906 1686 368 
+584 362 405 701 70 
+1032 641 621 1177 138 

@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 6x2
+# Es simetrica: NO
+6 2
+5516 8634 
+1420 2202 
+7100 11334 
+4116 6552 
+6528 10332 
+4544 7176 

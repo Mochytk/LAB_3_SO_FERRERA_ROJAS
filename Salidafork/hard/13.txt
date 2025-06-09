@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+3142 2214 2954 
+6780 4770 6360 
+15214 10728 14318 
+11934 8403 11208 
+7910 5565 7420 

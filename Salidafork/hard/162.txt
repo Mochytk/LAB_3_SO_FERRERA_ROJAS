@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 4x4
+# Es simetrica: NO
+4 4
+70564 75755 55107 89605 
+77992 83978 60419 99838 
+71860 76075 54840 90247 
+65358 70467 50347 84067 

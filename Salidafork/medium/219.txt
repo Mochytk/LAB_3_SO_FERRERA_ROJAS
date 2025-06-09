@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+1100 931 1085 
+698 565 672 
+1174 876 985 
+80 53 61 
+774 611 680 

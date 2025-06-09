@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 6x3
+# Es simetrica: NO
+6 3
+12555 36252 4263 
+21377 61902 7287 
+14645 43406 5107 
+15527 46880 5563 
+17988 54959 6565 
+19240 57590 6850 

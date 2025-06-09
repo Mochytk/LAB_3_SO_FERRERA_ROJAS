@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x4
+# Es simetrica: NO
+4 4
+686 504 560 520 
+1141 729 691 587 
+959 609 761 771 
+1288 966 916 754 

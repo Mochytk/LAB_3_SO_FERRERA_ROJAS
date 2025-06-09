@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 7
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x2
+# Es simetrica: NO
+3 2
+558 1236 
+295 738 
+849 1118 

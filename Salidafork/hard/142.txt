@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 7
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+72984 33278 43507 
+38239 17263 22835 
+93549 42705 54915 
+53938 25505 30951 
+69396 31127 41629 

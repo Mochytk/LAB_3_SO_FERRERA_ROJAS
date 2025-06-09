@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 3528
+# Matriz resultado: 4x5
+# Es simetrica: NO
+4 5
+9968 4992 2492 8762 12532 
+14328 6928 3582 11357 15786 
+4648 2292 1162 3907 5522 
+1840 991 460 1965 2939 

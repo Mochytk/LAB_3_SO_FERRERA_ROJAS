@@ -1,0 +1,11 @@
+# Tiempo de ejecucion (ms): 16
+# Uso de memoria (KB): 2320
+# Matriz resultado: 6x2
+# Es simetrica: NO
+6 2
+1076 1508 
+808 774 
+212 256 
+936 1182 
+1068 1512 
+880 974 

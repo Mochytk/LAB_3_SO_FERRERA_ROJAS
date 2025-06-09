@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+39716 51612 
+53242 68802 
+84924 109326 
+48242 62256 
+39346 51736 

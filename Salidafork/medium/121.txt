@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 3
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x3
+# Es simetrica: NO
+4 3
+1545 1439 1180 
+871 823 625 
+865 781 745 
+385 351 320 

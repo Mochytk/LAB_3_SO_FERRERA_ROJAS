@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 3x3
+# Es simetrica: NO
+3 3
+236 370 631 
+288 471 796 
+180 249 437 

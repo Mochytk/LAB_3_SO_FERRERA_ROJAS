@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 5x2
+# Es simetrica: NO
+5 2
+27155 36056 
+15535 20716 
+15182 20031 
+5688 8491 
+25865 34848 

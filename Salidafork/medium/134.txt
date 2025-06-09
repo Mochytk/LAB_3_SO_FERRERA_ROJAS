@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+696 786 1614 
+266 313 328 
+494 561 1086 
+184 209 446 
+376 431 728 

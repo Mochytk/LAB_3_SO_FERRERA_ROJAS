@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+3220 3343 3615 
+2077 2227 2499 
+4045 4235 4654 
+1147 1192 1320 
+1244 1264 1334 

@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 9
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x3
+# Es simetrica: NO
+5 3
+824 1046 1362 
+664 997 1160 
+1048 1372 1678 
+688 940 1229 
+1196 1664 2022 

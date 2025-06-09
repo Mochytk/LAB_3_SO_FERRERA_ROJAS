@@ -1,0 +1,10 @@
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 2320
+# Matriz resultado: 5x4
+# Es simetrica: NO
+5 4
+1631 1037 595 1412 
+3334 2226 1836 2527 
+2659 2059 1449 2322 
+4327 3027 2323 3471 
+2980 1993 1475 2401 

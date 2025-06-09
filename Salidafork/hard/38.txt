@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 3528
+# Matriz resultado: 2x3
+# Es simetrica: NO
+2 3
+3836 6330 6288 
+3100 5271 5301 

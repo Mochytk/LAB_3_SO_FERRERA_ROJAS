@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2320
+# Matriz resultado: 4x3
+# Es simetrica: NO
+4 3
+510 459 1005 
+230 235 565 
+854 707 1437 
+702 531 981 

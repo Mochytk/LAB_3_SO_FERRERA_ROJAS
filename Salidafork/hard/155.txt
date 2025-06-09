@@ -1,0 +1,8 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 3528
+# Matriz resultado: 3x5
+# Es simetrica: NO
+3 5
+6034 9650 19289 8463 14486 
+5970 9360 18240 9030 14520 
+6128 9764 19426 8722 14748 
