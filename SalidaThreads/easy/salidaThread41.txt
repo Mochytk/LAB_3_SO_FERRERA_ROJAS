@@ -1,0 +1,7 @@
+# Tiempo: 3 ms
+# Memoria Utilizada: 1685744 bytes
+# Hebras Creadas: 8
+3 4
+88 133 141 61
+91 131 132 50
+54 78 76 20

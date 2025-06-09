@@ -1,0 +1,8 @@
+# Tiempo: 0 ms
+# Memoria Utilizada: 236112 bytes
+# Hebras Creadas: 8
+4 6
+43 72 45 61 30 77
+28 40 52 36 16 36
+144 153 153 126 72 144
+90 94 121 80 43 82

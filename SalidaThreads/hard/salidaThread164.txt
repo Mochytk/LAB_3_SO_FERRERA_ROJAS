@@ -1,0 +1,7 @@
+# Tiempo: 6 ms
+# Memoria Utilizada: 5000048 bytes
+# Hebras Creadas: 24
+3 3
+9278 9656 11152
+6420 6682 7789
+5888 6128 7096

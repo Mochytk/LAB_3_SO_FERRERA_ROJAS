@@ -1,0 +1,8 @@
+# Tiempo: 9 ms
+# Memoria Utilizada: 5387128 bytes
+# Hebras Creadas: 16
+4 3
+4211 3188 2776
+2702 1721 1572
+4878 3665 3240
+1914 1560 1325

@@ -1,0 +1,8 @@
+# Tiempo: 4 ms
+# Memoria Utilizada: 3633824 bytes
+# Hebras Creadas: 8
+4 4
+39 59 100 9
+19 52 103 8
+56 23 75 29
+91 78 124 22

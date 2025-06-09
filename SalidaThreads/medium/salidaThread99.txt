@@ -1,0 +1,10 @@
+# Tiempo: 18 ms
+# Memoria Utilizada: 8857216 bytes
+# Hebras Creadas: 16
+6 3
+513 631 935
+351 449 739
+432 528 768
+513 631 935
+405 499 743
+459 581 931

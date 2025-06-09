@@ -1,0 +1,9 @@
+# Tiempo: 5 ms
+# Memoria Utilizada: 4083280 bytes
+# Hebras Creadas: 16
+5 3
+359 365 296
+1188 1188 988
+1743 1653 1488
+842 866 690
+901 787 798

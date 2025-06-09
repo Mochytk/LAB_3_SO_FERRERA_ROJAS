@@ -1,0 +1,5 @@
+Dificultad: hard
+Archivos procesados: 200
+tiempo_total: 217 ms
+MemoriaPico: 5442384 bytes
+TotalHebrasCreadas: 4816

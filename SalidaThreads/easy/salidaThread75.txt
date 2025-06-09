@@ -1,0 +1,6 @@
+# Tiempo: 8 ms
+# Memoria Utilizada: 3482552 bytes
+# Hebras Creadas: 8
+2 4
+90 68 89 61
+59 37 61 48

@@ -1,0 +1,7 @@
+# Tiempo: 10 ms
+# Memoria Utilizada: 6016576 bytes
+# Hebras Creadas: 24
+3 2
+62672 56566
+66875 59911
+83214 74889

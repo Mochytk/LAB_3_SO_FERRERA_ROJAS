@@ -1,0 +1,8 @@
+# Tiempo: 6 ms
+# Memoria Utilizada: -54162968 bytes
+# Hebras Creadas: 16
+4 4
+686 504 560 520
+1141 729 691 587
+959 609 761 771
+1288 966 916 754

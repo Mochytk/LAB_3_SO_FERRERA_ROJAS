@@ -1,0 +1,9 @@
+# Tiempo: 10 ms
+# Memoria Utilizada: -22100016 bytes
+# Hebras Creadas: 16
+5 3
+594 408 1110
+637 504 1197
+781 552 1461
+751 472 1399
+324 248 608

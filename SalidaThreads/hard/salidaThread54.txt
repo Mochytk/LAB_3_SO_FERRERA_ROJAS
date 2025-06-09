@@ -1,0 +1,6 @@
+# Tiempo: 6 ms
+# Memoria Utilizada: 2903064 bytes
+# Hebras Creadas: 24
+2 4
+3043 4222 6872 3692
+3991 5539 9014 4844

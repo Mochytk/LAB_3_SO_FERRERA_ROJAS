@@ -1,0 +1,8 @@
+# Tiempo: 4 ms
+# Memoria Utilizada: 2474184 bytes
+# Hebras Creadas: 16
+4 4
+258 906 172 770
+357 1301 238 1172
+471 1639 314 1372
+324 1108 216 900

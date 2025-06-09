@@ -1,0 +1,10 @@
+# Tiempo: 12 ms
+# Memoria Utilizada: 8746384 bytes
+# Hebras Creadas: 16
+6 2
+4381 3244
+3025 2567
+4626 3370
+2248 2097
+2262 1575
+3803 3226

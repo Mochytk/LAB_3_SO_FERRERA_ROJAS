@@ -1,0 +1,9 @@
+# Tiempo: 21 ms
+# Memoria Utilizada: 15250536 bytes
+# Hebras Creadas: 16
+5 3
+696 786 1614
+266 313 328
+494 561 1086
+184 209 446
+376 431 728

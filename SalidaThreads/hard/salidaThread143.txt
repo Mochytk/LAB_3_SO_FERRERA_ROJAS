@@ -1,0 +1,10 @@
+# Tiempo: 7 ms
+# Memoria Utilizada: 5198464 bytes
+# Hebras Creadas: 24
+6 2
+13013 7618
+4054 2373
+10706 6274
+7885 4610
+9964 5829
+7366 4314

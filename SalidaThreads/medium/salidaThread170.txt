@@ -1,0 +1,9 @@
+# Tiempo: 17 ms
+# Memoria Utilizada: 10007832 bytes
+# Hebras Creadas: 16
+5 2
+2244 668
+2117 639
+2957 927
+2555 791
+635 206

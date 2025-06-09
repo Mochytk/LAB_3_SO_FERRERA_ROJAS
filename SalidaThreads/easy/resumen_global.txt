@@ -1,0 +1,5 @@
+Dificultad: easy
+Archivos procesados: 500
+tiempo_total: 212 ms
+MemoriaPico: 24974416 bytes
+TotalHebrasCreadas: 4016

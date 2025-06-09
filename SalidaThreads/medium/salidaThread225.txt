@@ -1,0 +1,10 @@
+# Tiempo: 4 ms
+# Memoria Utilizada: 2459320 bytes
+# Hebras Creadas: 16
+6 3
+693 632 949
+225 232 305
+81 99 108
+1107 966 1521
+693 632 949
+630 598 860
