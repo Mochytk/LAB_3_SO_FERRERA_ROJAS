@@ -1,0 +1,7 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2244
+# Matriz resultado: 3x6
+3 6
+66 92 53 74 98 88 
+32 45 13 33 103 81 
+90 103 80 93 131 119 

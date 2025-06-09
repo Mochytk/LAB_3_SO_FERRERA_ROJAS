@@ -1,0 +1,6 @@
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2244
+# Matriz resultado: 2x4
+2 4
+90 68 89 61 
+59 37 61 48 

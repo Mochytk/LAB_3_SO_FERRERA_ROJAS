@@ -1,0 +1,9 @@
+# Tiempo de ejecucion (ms): 1
+# Uso de memoria (KB): 2244
+# Matriz resultado: 5x3
+5 3
+58 63 87 
+50 56 26 
+44 48 60 
+34 38 20 
+26 27 75 
