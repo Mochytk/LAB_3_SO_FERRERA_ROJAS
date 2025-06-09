@@ -1,6 +1,6 @@
-# Tiempo: 9 ms
-# Memoria Utilizada: 6500576 bytes
-# Hebras Creadas: 16
+# Tiempo: 11 ms
+# Memoria Utilizada: 15225040 bytes
+# Hebras Creadas: 24
 5 4
 566 393 718 705
 1580 1024 1899 1597

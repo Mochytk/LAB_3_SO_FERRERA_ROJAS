@@ -89,9 +89,9 @@ public class lab3_ferrera_rojas {
         try (BufferedWriter escribe = new BufferedWriter(new FileWriter(res_glob))) {
             escribe.write("Dificultad: " + dificultad + "\n");
             escribe.write("Archivos procesados: " + num_archivos + "\n");
-            escribe.write("tiempo_total: " + tiempo_total + " ms\n");
-            escribe.write("MemoriaPico: " + mem_peak + " bytes\n");
-            escribe.write("TotalHebrasCreadas: " + (cant_cpus * 2 + cant_cpus * mult_total.get()) + "\n");
+            escribe.write("Tiempo total: " + tiempo_total + " ms\n");
+            escribe.write("Memoria peak: " + mem_peak + " bytes\n");
+            escribe.write("Cantidad de hebras creadas: " + (cant_cpus * 2 + cant_cpus * mult_total.get()) + "\n");
         } catch (IOException e) {
             System.err.println("Error escribiendo resumen global: " + e.getMessage());
         }
