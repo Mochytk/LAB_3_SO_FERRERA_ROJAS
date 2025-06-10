@@ -1,5 +1,5 @@
-# Tiempo de ejecucion (ms): 2
-# Uso de memoria (KB): 3528
+# Tiempo de ejecucion (ms): 4
+# Uso de memoria (KB): 3764
 # Matriz resultado: 4x6
 # Es simetrica: NO
 4 6

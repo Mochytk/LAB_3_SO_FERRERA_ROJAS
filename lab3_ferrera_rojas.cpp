@@ -180,6 +180,8 @@ Matriz analizarBloqueMatriz(ifstream& archivo) {
 int main() {
     string directorioEntrada = "easy/";
     string directorioSalida = "Salidafork/easy/";
+    string resumenSalida = "Salidafork/easy.txt";
+
     system(("mkdir -p " + directorioSalida).c_str());
 
     DIR* dir = opendir(directorioEntrada.c_str());
@@ -187,6 +189,9 @@ int main() {
         cerr << "No se pudo abrir la carpeta: " << directorioEntrada << endl;
         return 1;
     }
+
+    double tiempoTotalGlobal = 0;
+    long memoriaMaximaGlobal = 0;
 
     struct dirent* entrada;
     while ((entrada = readdir(dir)) != NULL) {
@@ -216,8 +221,18 @@ int main() {
 
         string rutaSalida = directorioSalida + nombreArchivo;
         guardarMatriz(resultado, rutaSalida, tiempoEjecucion, memoriaUsada);
+
+        tiempoTotalGlobal += tiempoEjecucion;
+        memoriaMaximaGlobal = max(memoriaMaximaGlobal, memoriaUsada);
     }
 
     closedir(dir);
+
+    // Guardar resumen en easy.txt
+    ofstream resumen(resumenSalida);
+    resumen << "Tiempo total de ejecucion (ms): " << tiempoTotalGlobal << endl;
+    resumen << "Uso máximo de memoria (KB): " << memoriaMaximaGlobal << endl;
+    resumen.close();
+
     return 0;
 }

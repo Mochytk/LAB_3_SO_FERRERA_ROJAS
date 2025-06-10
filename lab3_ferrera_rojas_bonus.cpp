@@ -162,8 +162,11 @@ Matriz analizarBloqueMatriz(ifstream& archivo) {
     return mat;
 }
 
-void procesarDirectorio(const string& directorioEntrada, const string& directorioSalida) {
+void procesarDirectorio(const string& directorioEntrada, const string& directorioSalida, const string& resumenPath) {
     system(("mkdir -p " + directorioSalida).c_str());
+
+    double tiempoTotalGlobal = 0;
+    long memoriaMaximaGlobal = 0;
 
     DIR* dir = opendir(directorioEntrada.c_str());
     if (!dir) {
@@ -184,7 +187,7 @@ void procesarDirectorio(const string& directorioEntrada, const string& directori
         }
 
         cout << "Procesando archivo: " << nombreArchivo << endl;
-        
+
         // Leer número de matrices
         string linea;
         while (getline(archivo, linea) && linea.empty());
@@ -195,14 +198,11 @@ void procesarDirectorio(const string& directorioEntrada, const string& directori
             continue;
         }
 
-        // Leer todas las matrices
         vector<Matriz> matrices;
         bool error = false;
         for (int i = 0; i < numMatrices && !error; ++i) {
             Matriz mat = analizarBloqueMatriz(archivo);
             matrices.push_back(mat);
-            
-            // Verificar compatibilidad con matriz anterior
             if (i > 0 && matrices[i-1].cols != matrices[i].rows) {
                 cerr << "Error: Matrices incompatibles para multiplicación (" 
                      << matrices[i-1].rows << "x" << matrices[i-1].cols << " * "
@@ -210,8 +210,7 @@ void procesarDirectorio(const string& directorioEntrada, const string& directori
                 error = true;
             }
         }
-        
-        // Variables para resultados
+
         double tiempoTotal = 0;
         long memoriaMaxima = 0;
         Matriz resultado;
@@ -219,37 +218,39 @@ void procesarDirectorio(const string& directorioEntrada, const string& directori
         bool simetrica = false;
 
         if (multiplicable) {
-            // Multiplicación en cadena
             resultado = matrices[0];
-            
             for (size_t i = 1; i < matrices.size(); ++i) {
                 double tiempoParcial;
                 long memoriaParcial;
-                
                 resultado = multiplicarConForks(resultado, matrices[i], nombreArchivo, tiempoParcial, memoriaParcial);
                 tiempoTotal += tiempoParcial;
                 memoriaMaxima = max(memoriaMaxima, memoriaParcial);
             }
-
-            // Análisis de simetría solo si la multiplicación fue posible
             simetrica = esSimetrica(resultado);
         }
 
         string rutaSalida = directorioSalida + nombreArchivo;
         guardarMatriz(resultado, rutaSalida, tiempoTotal, memoriaMaxima, simetrica, multiplicable);
+
+        tiempoTotalGlobal += tiempoTotal;
+        memoriaMaximaGlobal = max(memoriaMaximaGlobal, memoriaMaxima);
     }
 
     closedir(dir);
+
+    // Guardar resumen global
+    ofstream resumen(resumenPath);
+    resumen << "Tiempo total de ejecucion (ms): " << tiempoTotalGlobal << endl;
+    resumen << "Uso máximo de memoria (KB): " << memoriaMaximaGlobal << endl;
+    resumen.close();
 }
 
 int main() {
-    // Procesar carpeta medium
     cout << "Procesando carpeta medium..." << endl;
-    procesarDirectorio("medium/", "Salidafork/medium/");
-    
-    // Procesar carpeta hard
+    procesarDirectorio("medium/", "Salidafork/medium/", "Salidafork/medium.txt");
+
     cout << "\nProcesando carpeta hard..." << endl;
-    procesarDirectorio("hard/", "Salidafork/hard/");
+    procesarDirectorio("hard/", "Salidafork/hard/", "Salidafork/hard.txt");
 
     return 0;
 }

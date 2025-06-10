@@ -1,5 +1,5 @@
 # Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 2216
+# Uso de memoria (KB): 2168
 # Matriz resultado: 5x4
 5 4
 89 41 86 57 

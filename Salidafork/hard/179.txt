@@ -1,5 +1,5 @@
 # Tiempo de ejecucion (ms): 0
-# Uso de memoria (KB): 3528
+# Uso de memoria (KB): 3764
 # Matriz resultado: 2x4
 # Es simetrica: NO
 2 4

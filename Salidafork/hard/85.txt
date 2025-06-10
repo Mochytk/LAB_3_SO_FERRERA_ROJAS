@@ -1,5 +1,5 @@
-# Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 3528
+# Tiempo de ejecucion (ms): 2
+# Uso de memoria (KB): 3764
 # Matriz resultado: 3x3
 # Es simetrica: NO
 3 3
