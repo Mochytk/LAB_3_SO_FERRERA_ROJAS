@@ -5,10 +5,9 @@
 
 ## Especificación de los algoritmos y desarrollo realizada
 Vamos con el flujo principal:
-
-Creamos la carpeta de salida: "Salida{fork, Threads}/easy/"
-Leemos los archivos de la carpeta /easy y las matrices A y B de cada uno.
-Multiplicamos y escribimos el resultado en el archivo correspondiente en "/Salida{fork, Threads}/easy/num_archivo.txt"
+- Creamos la carpeta de salida: "Salida{fork, Threads}/easy/"
+- Leemos los archivos de la carpeta /easy y las matrices A y B de cada uno.
+- Multiplicamos y escribimos el resultado en el archivo correspondiente en "/Salida{fork, Threads}/easy/num_archivo.txt"
 
 Las variaciones van en que:
 - C++: Usamos un hijo por fila para calcular la multiplicación
