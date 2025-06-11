@@ -1,3 +1,6 @@
+# Tiempo de multiplicación: 0 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
 6 5
 190 170 208 64 78
 139 72 90 94 113

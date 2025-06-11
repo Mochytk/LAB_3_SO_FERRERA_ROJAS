@@ -31,13 +31,13 @@ public class lab3_ferrera_rojas_bonus {
     }
 
     public static void main(String[] args) {
-        // Crear directorios base de salida
-        new File("SalidaThreads/medium_hard").mkdirs();
-        new File("SalidaThreads/medium_hard_sym").mkdirs();
-        
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingrese dificultad (medium/hard): ");
         String dificultad = sc.nextLine().trim().toLowerCase();
+        
+        // Crear directorio base de salida para la dificultad seleccionada
+        new File("SalidaThreads/" + dificultad).mkdirs();
+        
         String baseDir = dificultad + "/";
         File folder = new File(baseDir);
         File[] files = folder.listFiles((d, name) -> name.endsWith(".txt"));
@@ -56,12 +56,12 @@ public class lab3_ferrera_rojas_bonus {
                     result = multiply(result, next); // Multiplicación paralelizada
                 }
                 boolean symmetric = possible && isSymmetric(result);
-                writeResult(file.getName(), result, possible, symmetric);
+                writeResult(file.getName(), result, possible, symmetric, dificultad);
             } catch (IOException e) {
                 System.err.println("Error en " + file.getName() + ": " + e.getMessage());
             }
         }
-        System.out.println("Procesamiento MEDIUM/HARD completado.");
+        System.out.println("Procesamiento " + dificultad.toUpperCase() + " completado.");
         sc.close();
     }
 
@@ -122,9 +122,13 @@ public class lab3_ferrera_rojas_bonus {
         return true;
     }
 
-    private static void writeResult(String originalName, int[][] C, boolean possible, boolean sym) throws IOException {
-        String outDir = sym ? "medium_hard_sym" : "medium_hard";
-        String outName = "SalidaThreads/" + outDir + "/resultado_" + originalName;
+    private static void writeResult(String originalName, int[][] C, boolean possible, boolean sym, String dificultad) throws IOException {
+        String outName = "SalidaThreads/" + dificultad + "/resultado_" + originalName;
+        
+        // Asegurar que exista el directorio
+        File outputDir = new File("SalidaThreads/" + dificultad);
+        if (!outputDir.exists()) outputDir.mkdirs();
+        
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outName))) {
             bw.write("# Simétrica: " + sym + "\n");
             bw.write(C.length + " " + (C.length > 0 ? C[0].length : 0) + "\n");
