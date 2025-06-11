@@ -3,71 +3,139 @@ import java.util.*;
 
 public class lab3_ferrera_rojas {
     public static void main(String[] args) {
-        String baseDir = "easy/";
-        File folder = new File(baseDir);
-        File[] files = folder.listFiles((d, name) -> name.endsWith(".txt"));
-        if (files == null) return;
-        for (File file : files) {
+        // Creamos la carpeta para los resultados
+        new File("SalidaThreads/easy").mkdirs();
+        
+        // buscaremos los archivos en la carpeta (se asume que hay archivos y que los archivos están en la misma carpeta que el .java)
+        String base = "easy/";
+        File carpeta = new File(base);
+        File[] archivos = carpeta.listFiles((d, name) -> name.endsWith(".txt"));
+        
+        // Recorremos todos los archivos
+        for (File archivo : archivos) {
             try {
-                List<int[][]> matrices = readMatrices(file);
-                if (matrices.size() < 2) {
-                    System.out.println("Archivo " + file.getName() + " no contiene dos matrices");
-                    continue;
-                }
+                // Leemos las matrices (Aquí se asume que hay 2 máximo)
+                List<int[][]> matrices = leer_matrices(archivo);
                 int[][] A = matrices.get(0);
                 int[][] B = matrices.get(1);
-                int[][] C = multiply(A, B);
-                writeResult(file.getName(), C);
+                // Se llama a la función para multiplicarlas
+                int[][] C = multiplicar(A, B);
+                // Se llama a la función para escribir el archivo resultante
+                esc_resultado(archivo.getName(), C);
             } catch (IOException e) {
-                System.err.println("Error en " + file.getName() + ": " + e.getMessage());
+                System.err.println("Error en " + archivo.getName() + ": " + e.getMessage());
             }
         }
-        System.out.println("Procesamiento EASY completado.");
     }
 
-    private static List<int[][]> readMatrices(File f) throws IOException {
+    private static List<int[][]> leer_matrices(File f) throws IOException {
+        // Para leer
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
-            String line;
-            int count = Integer.parseInt(br.readLine().trim());
-            List<int[][]> list = new ArrayList<>();
-            for (int m = 0; m < count && m < 2; m++) {
-                // Leer dimensiones
-                while ((line = br.readLine()) != null && line.trim().isEmpty());
-                if (line == null) break;
-                String[] dim = line.trim().split("\\s+");
-                int n = Integer.parseInt(dim[0]);
-                int p = Integer.parseInt(dim[1]);
-                int[][] M = new int[n][p];
+            String linea;
+            // Sacamos la cantidad de matrices (podria saltarse este paso pero mejor mantenerlo para el bonus)
+            int cant_M = Integer.parseInt(br.readLine().trim());
+
+            // Se genera la lista de matrices como un ArrayList
+            List<int[][]> matrices = new ArrayList<>();
+
+            // for para leer las matrices
+            for (int k = 0; k < cant_M; k++) {
+
+                // Leer los vacios hasta tener datos y si es nulo es que se termino el archivo
+                while ((linea = br.readLine()) != null && linea.trim().isEmpty());
+                if (linea == null) break;
+                
+                // Leemos las dimensiones
+                String[] dimensiones = linea.trim().split("\\s+");
+                int n = Integer.parseInt(dimensiones[0]);
+                int m = Integer.parseInt(dimensiones[1]);
+                // Creamos la matriz de las dimensiones que recien leimos
+                int[][] M = new int[n][m];
+                
+                // for para leer las filas
                 for (int i = 0; i < n; i++) {
-                    line = br.readLine();
-                    String[] vals = line.trim().split("\\s+");
-                    for (int j = 0; j < p; j++) M[i][j] = Integer.parseInt(vals[j]);
+                    linea = br.readLine();
+                    String[] valores = linea.trim().split("\\s+");
+                    for (int j = 0; j < m; j++) {
+                        M[i][j] = Integer.parseInt(valores[j]);
+                    } 
                 }
-                list.add(M);
+
+                // La guardamos en la lista de matrices
+                matrices.add(M);
             }
-            return list;
+            return matrices;
         }
     }
 
-    private static int[][] multiply(int[][] A, int[][] B) {
-        int n = A.length;
-        int m = A[0].length;
-        int p = B[0].length;
-        int[][] C = new int[n][p];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < p; j++) {
+    // Clase interna para el cálculo por filas usando hebras (Mult por Balatro)
+    private static class Mult_filas implements Runnable {
+        private final int[][] A;
+        private final int[][] B;
+        private final int[][] C;
+        private final int row;
+
+        public Mult_filas(int[][] A, int[][] B, int[][] C, int row) {
+            this.A = A;
+            this.B = B;
+            this.C = C;
+            this.row = row;
+        }
+
+        @Override
+        public void run() {
+            int n = A[0].length;
+            int m = B[0].length;
+            for (int j = 0; j < m; j++) {
                 int sum = 0;
-                for (int k = 0; k < m; k++) sum += A[i][k] * B[k][j];
-                C[i][j] = sum;
+                for (int k = 0; k < n; k++) {
+                    sum += A[row][k] * B[k][j];
+                }
+                C[row][j] = sum;
+            }
+        }
+    }
+
+    private static int[][] multiplicar(int[][] A, int[][] B) {
+        // Metodo para multiplicar usando las hebras
+        // Leemos las dimensiones y creamos la nueva matriz
+        int n = A.length;
+        int m = B[0].length;
+        int[][] C = new int[n][m];
+
+        // Generamos tantas hebras como filas haya
+        Thread[] threads = new Thread[n];
+        
+        // Creamos y ejecutamos las hebras
+        for (int i = 0; i < n; i++) {
+            Runnable task = new Mult_filas(A, B, C, i);
+            threads[i] = new Thread(task);
+            threads[i].start();
+        }
+        
+        // Esperamos a que todas las hebras terminen
+        for (int i = 0; i < n; i++) {
+            try {
+                threads[i].join();
+            } catch (InterruptedException e) {
+                System.err.println("Interrupción en hebra: " + e.getMessage());
+                Thread.currentThread().interrupt();
             }
         }
         return C;
     }
 
-    private static void writeResult(String originalName, int[][] C) throws IOException {
+    private static void esc_resultado(String originalName, int[][] C) throws IOException {
+        // función para escribir el resultado
+        
+        // nombre del archivo donde escribir
         String outName = "SalidaThreads/easy/resultado_" + originalName;
+
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outName))) {
+            // escribimos las dimensiones
             bw.write(C.length + " " + C[0].length + "\n");
+
+            // escribimos la matriz
             for (int[] row : C) {
                 for (int j = 0; j < row.length; j++) {
                     bw.write(row[j] + (j < row.length - 1 ? " " : ""));

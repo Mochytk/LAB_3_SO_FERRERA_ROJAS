@@ -2,21 +2,49 @@ import java.io.*;
 import java.util.*;
 
 public class lab3_ferrera_rojas_bonus {
+    // Clase interna para cálculo de filas con hebras
+    private static class RowMultiplier implements Runnable {
+        private final int[][] A;
+        private final int[][] B;
+        private final int[][] C;
+        private final int row;
+
+        public RowMultiplier(int[][] A, int[][] B, int[][] C, int row) {
+            this.A = A;
+            this.B = B;
+            this.C = C;
+            this.row = row;
+        }
+
+        @Override
+        public void run() {
+            int m = A[0].length;
+            int p = B[0].length;
+            for (int j = 0; j < p; j++) {
+                int sum = 0;
+                for (int k = 0; k < m; k++) {
+                    sum += A[row][k] * B[k][j];
+                }
+                C[row][j] = sum;
+            }
+        }
+    }
+
     public static void main(String[] args) {
+        // Crear directorios base de salida
+        new File("SalidaThreads/medium_hard").mkdirs();
+        new File("SalidaThreads/medium_hard_sym").mkdirs();
+        
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingrese dificultad (medium/hard): ");
         String dificultad = sc.nextLine().trim().toLowerCase();
         String baseDir = dificultad + "/";
         File folder = new File(baseDir);
         File[] files = folder.listFiles((d, name) -> name.endsWith(".txt"));
-        if (files == null) return;
+        
         for (File file : files) {
             try {
                 List<int[][]> matrices = readMatrices(file);
-                if (matrices.size() < 2) {
-                    System.out.println("Archivo " + file.getName() + " no contiene suficientes matrices");
-                    continue;
-                }
                 int[][] result = matrices.get(0);
                 boolean possible = true;
                 for (int idx = 1; idx < matrices.size(); idx++) {
@@ -25,7 +53,7 @@ public class lab3_ferrera_rojas_bonus {
                         possible = false;
                         break;
                     }
-                    result = multiply(result, next);
+                    result = multiply(result, next); // Multiplicación paralelizada
                 }
                 boolean symmetric = possible && isSymmetric(result);
                 writeResult(file.getName(), result, possible, symmetric);
@@ -34,6 +62,7 @@ public class lab3_ferrera_rojas_bonus {
             }
         }
         System.out.println("Procesamiento MEDIUM/HARD completado.");
+        sc.close();
     }
 
     private static List<int[][]> readMatrices(File f) throws IOException {
@@ -58,16 +87,25 @@ public class lab3_ferrera_rojas_bonus {
         }
     }
 
+    // Multiplicación paralelizada por filas
     private static int[][] multiply(int[][] A, int[][] B) {
         int n = A.length;
-        int m = A[0].length;
         int p = B[0].length;
         int[][] C = new int[n][p];
+        Thread[] threads = new Thread[n];
+        
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < p; j++) {
-                int sum = 0;
-                for (int k = 0; k < m; k++) sum += A[i][k] * B[k][j];
-                C[i][j] = sum;
+            Runnable task = new RowMultiplier(A, B, C, i);
+            threads[i] = new Thread(task);
+            threads[i].start();
+        }
+        
+        for (int i = 0; i < n; i++) {
+            try {
+                threads[i].join();
+            } catch (InterruptedException e) {
+                System.err.println("Interrupción en hebra: " + e.getMessage());
+                Thread.currentThread().interrupt();
             }
         }
         return C;
@@ -85,12 +123,11 @@ public class lab3_ferrera_rojas_bonus {
     }
 
     private static void writeResult(String originalName, int[][] C, boolean possible, boolean sym) throws IOException {
-        String outName = "SalidaThreads/" + (sym ? "medium_hard_sym" : "medium_hard") + "/resultado_" + originalName;
-        File dir = new File(outName).getParentFile();
-        if (!dir.exists()) dir.mkdirs();
+        String outDir = sym ? "medium_hard_sym" : "medium_hard";
+        String outName = "SalidaThreads/" + outDir + "/resultado_" + originalName;
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outName))) {
             bw.write("# Simétrica: " + sym + "\n");
-            bw.write(C.length + " " + (C.length>0?C[0].length:0) + "\n");
+            bw.write(C.length + " " + (C.length > 0 ? C[0].length : 0) + "\n");
             for (int[] row : C) {
                 for (int j = 0; j < row.length; j++) {
                     bw.write(row[j] + (j < row.length - 1 ? " " : ""));

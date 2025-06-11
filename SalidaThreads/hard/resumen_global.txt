@@ -1,5 +1,0 @@
-Dificultad: hard
-Archivos procesados: 200
-Tiempo total: 289 ms
-Memoria peak: 235961136 bytes
-Cantidad de hebras creadas: 7224

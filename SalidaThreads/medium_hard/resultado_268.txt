@@ -1,5 +1,0 @@
-# Posible: true
-# Simétrica: false
-2 4
-902 902 1057 1306
-712 712 623 890

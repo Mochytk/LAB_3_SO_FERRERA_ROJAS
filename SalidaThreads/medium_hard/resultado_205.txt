@@ -1,5 +1,0 @@
-# Posible: true
-# Simétrica: false
-2 2
-3956 1587
-2969 1157
