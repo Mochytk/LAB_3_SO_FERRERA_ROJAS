@@ -1,5 +1,5 @@
 # Tiempo de ejecucion (ms): 0
-# Uso de memoria (KB): 2168
+# Uso de memoria (KB): 2148
 # Matriz resultado: 4x3
 4 3
 161 113 169 

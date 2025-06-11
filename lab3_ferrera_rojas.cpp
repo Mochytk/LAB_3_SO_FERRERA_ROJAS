@@ -205,7 +205,6 @@ int main() {
             continue;
         }
 
-        cout << "Procesando archivo: " << nombreArchivo << endl;
         Matriz A = analizarBloqueMatriz(archivo);
         Matriz B = analizarBloqueMatriz(archivo);
         
