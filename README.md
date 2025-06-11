@@ -50,6 +50,7 @@ Los archivos:
 - lab_3_ferrera_rojas.java
 - lab_3_ferrera_rojas_bonus.cpp
 - lab_3_ferrera_rojas_bonus.java 
+
 estan en el mismo directorio, ademas en este mismo directorio deben estar las carpetas easy, medium, hard con los archivos de prueba correspondientes a cada una de estas.
 
 Una última cosa, las pruebas que se ven en el excel fueron medidas después de compilar cada código un par de veces, esto para que se normalizara el procedimiento y no hubiera demasiadas variaciones.
