@@ -22,11 +22,10 @@ public class lab3_ferrera_rojas {
         // Creamos la carpeta para los resultados
         new File("SalidaThreads/easy").mkdirs();
         
-        // buscaremos los archivos en la carpeta
+        // buscaremos los archivos en la carpeta y los guardamos en un arreglo (se asume que existen archivos)
         String base = "easy/";
         File carpeta = new File(base);
         File[] archivos = carpeta.listFiles((d, name) -> name.endsWith(".txt"));
-        if (archivos == null) return;
         
         // Recorremos todos los archivos
         for (File archivo : archivos) {
@@ -41,24 +40,24 @@ public class lab3_ferrera_rojas {
                 Runtime runtime = Runtime.getRuntime();
                 long memoriaInicial = runtime.totalMemory() - runtime.freeMemory();
                 
-                // Multiplicación
+                // Multiplicamos con el método
                 int[][] C = multiplicar(A, B);
-                int hebrasUsadas = A.length; // Número de hebras = filas de A
+                int hebrasUsadas = A.length; // el número de hebras será igual a las filas de A
                 
-                // Cálculo de tiempo y memoria usada
+                // Calculamos de tiempo y memoria usada
                 long finTiempo = System.nanoTime();
                 long memoriaFinal = runtime.totalMemory() - runtime.freeMemory();
-                long tiempoTotal = (finTiempo - inicioTiempo) / 1000000; // microsegundos
+                long tiempoTotal = (finTiempo - inicioTiempo) / 1000000; // ms
                 long memoriaUsada = (memoriaFinal - memoriaInicial) / 1024; // KB
                 
-                // Guardar estadísticas
+                // Guardamos las estadísticas
                 resumenGlobal.add(new Estadisticas(
                     tiempoTotal, 
                     memoriaUsada, 
                     hebrasUsadas
                 ));
                 
-                // Escribir resultado con estadísticas
+                // Escribimos el resultado con las estadísticas
                 esc_resultado(archivo.getName(), C, tiempoTotal, memoriaUsada, hebrasUsadas);
                 
             } catch (IOException e) {
@@ -66,7 +65,7 @@ public class lab3_ferrera_rojas {
             }
         }
         
-        // Escribir resumen global
+        // Escribimos el resumen global
         escribirResumenGlobal();
     }
 

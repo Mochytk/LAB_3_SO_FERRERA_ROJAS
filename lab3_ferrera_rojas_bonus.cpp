@@ -186,8 +186,6 @@ void procesarDirectorio(const string& directorioEntrada, const string& directori
             continue;
         }
 
-        cout << "Procesando archivo: " << nombreArchivo << endl;
-
         // Leer número de matrices
         string linea;
         while (getline(archivo, linea) && linea.empty());
@@ -249,7 +247,7 @@ int main() {
     cout << "Procesando carpeta medium..." << endl;
     procesarDirectorio("medium/", "Salidafork/medium/", "Salidafork/medium.txt");
 
-    cout << "\nProcesando carpeta hard..." << endl;
+    cout << "Procesando carpeta hard..." << endl;
     procesarDirectorio("hard/", "Salidafork/hard/", "Salidafork/hard.txt");
 
     return 0;

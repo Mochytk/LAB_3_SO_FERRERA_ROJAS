@@ -17,7 +17,7 @@ Si se quiere compilar archivos de Java con
 
 Posteriormente ejecutar cada archivo por separado con
 - make run_cpp
-- make run_java_base
+- make run_java
 - make run_cpp_bonus
 - make run_java_bonus
 

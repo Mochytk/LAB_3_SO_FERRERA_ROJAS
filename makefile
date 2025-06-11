@@ -40,7 +40,7 @@ run_cpp_bonus: $(CPP_BONUS_BIN)
 	@echo "Ejecutando C++ (bonus):"
 	./$(CPP_BONUS_BIN)
 
-run_java_base: lab3_ferrera_rojas.class
+run_java: lab3_ferrera_rojas.class
 	@echo "Ejecutando Java (base):"
 	java lab3_ferrera_rojas
 
