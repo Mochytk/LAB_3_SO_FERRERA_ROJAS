@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 2
+24566 33350
+76811 105789
+55304 76444
+39217 53539
+52849 73895

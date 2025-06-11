@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 6
+8838 9358 4910 1810 10552 7086
+11646 12244 6470 2356 13672 9192
+5310 5696 2950 1112 6536 4380
+9603 10175 5335 1969 11484 7711

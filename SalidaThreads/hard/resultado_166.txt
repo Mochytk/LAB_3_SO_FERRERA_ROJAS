@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 5
+36722 17872 24346 30740 16280
+43996 21446 29228 36820 19540

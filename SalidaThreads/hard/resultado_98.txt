@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 3
+22844 19524 30373
+21208 18129 28179
+3906 3267 5111
+51502 43615 67997

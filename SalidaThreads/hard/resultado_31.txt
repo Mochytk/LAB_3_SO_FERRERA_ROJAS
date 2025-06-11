@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 9
+3 3
+5091 4833 6894
+11032 11376 16122
+6276 6588 9324

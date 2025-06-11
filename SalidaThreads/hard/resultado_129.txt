@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 4
+14302 9020 17345 10093
+17740 10776 21050 12210
+6992 4268 8320 4828
+14302 9020 17345 10093
+7310 4752 9025 5265

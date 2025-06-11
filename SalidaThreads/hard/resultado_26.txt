@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 2
+6544 8149
+18872 24044
+23522 29759
+1860 2286

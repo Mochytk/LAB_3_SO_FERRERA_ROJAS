@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 5
+30500 53323 62187 58389 57367
+27475 47892 56152 52831 51707
+34440 58807 69442 65236 63912
+27348 48897 56550 53163 52212

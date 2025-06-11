@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 4
+3043 4222 6872 3692
+3991 5539 9014 4844

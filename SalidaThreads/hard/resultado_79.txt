@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 2 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 6
+15686 20541 22556 25487 15387 23151
+19849 25477 29504 31238 18181 27575

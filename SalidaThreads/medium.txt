@@ -1,0 +1,7 @@
+Resumen Final:
+--------------
+Archivos procesados: 300
+Tiempo total: 818 ms
+Memoria máxima utilizada: 530 KB
+Total hebras utilizadas: 2364
+Promedio hebras por archivo: 7.88

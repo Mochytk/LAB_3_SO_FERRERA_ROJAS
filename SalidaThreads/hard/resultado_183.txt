@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 3
+86603 89128 47085
+68096 69976 37446

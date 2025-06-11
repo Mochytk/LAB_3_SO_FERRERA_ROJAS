@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 2 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 6
+38507 11764 32575 32389 23030 16603
+51338 15778 43312 43207 30731 22276

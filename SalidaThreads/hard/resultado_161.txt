@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 4
+4896 17644 15758 13352
+5535 19610 17299 14752
+4672 16467 14742 12503
+6883 23698 20999 17920

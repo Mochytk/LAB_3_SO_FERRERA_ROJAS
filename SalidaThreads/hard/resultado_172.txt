@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 2
+121262 118162
+115317 116583
+100548 100287
+140821 139626
+62077 59475
+64690 68225

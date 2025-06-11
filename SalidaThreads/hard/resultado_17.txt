@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 9
+3 2
+9358 17018
+6612 11172
+10772 18688

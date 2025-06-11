@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 4
+23821 10021 21892 17658
+11970 4950 11052 8856
+14147 5847 13064 10466
+15260 6290 14102 11286

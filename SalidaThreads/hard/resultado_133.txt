@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 5
+34785 24128 14082 19124 16988
+76165 51796 29654 41530 38212
+41003 28310 16502 22607 20270
+26903 18050 10222 14636 13742

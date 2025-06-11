@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 5
+9968 4992 2492 8762 12532
+14328 6928 3582 11357 15786
+4648 2292 1162 3907 5522
+1840 991 460 1965 2939

@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 3
+34790 28825 28925
+21494 18228 18768
+35677 29369 29309
+23296 19523 19675
+26708 22351 22751

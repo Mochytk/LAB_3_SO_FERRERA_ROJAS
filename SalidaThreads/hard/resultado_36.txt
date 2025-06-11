@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 3
+43314 55156 56291
+42922 56992 58346
+17275 20417 20683
+39085 51251 52463
+46313 61033 62479
+63588 81450 83162

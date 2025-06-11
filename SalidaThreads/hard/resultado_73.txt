@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 2
+27155 36056
+15535 20716
+15182 20031
+5688 8491
+25865 34848

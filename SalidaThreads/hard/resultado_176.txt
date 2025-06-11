@@ -1,0 +1,9 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 12
+4 6
+0 0 0 0 0 0
+8272 14422 6278 10107 10350 9995
+8010 14047 6091 9710 9964 9675
+7748 13672 5904 9313 9578 9355

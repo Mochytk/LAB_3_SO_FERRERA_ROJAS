@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 3
+14992 27298 18308
+15411 27934 18719
+13263 25387 17077
+14437 27688 18615
+15421 28014 18755

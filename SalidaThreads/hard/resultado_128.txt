@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 3
+64941 39858 45912
+20176 12255 14491
+40025 24435 27685
+62173 37356 42970
+48572 30222 35118

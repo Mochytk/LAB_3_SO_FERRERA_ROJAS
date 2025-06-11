@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 9
+3 6
+5414 4416 16716 9356 7884 14820
+4673 3909 14558 8043 6740 12402
+4064 3381 12636 7001 5874 10860

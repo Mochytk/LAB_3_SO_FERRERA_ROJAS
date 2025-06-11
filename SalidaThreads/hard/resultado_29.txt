@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 520 KB
+# Hebras utilizadas: 9
+3 4
+16388 11218 6432 14034
+9564 6663 3822 8355
+6853 4826 2769 6060

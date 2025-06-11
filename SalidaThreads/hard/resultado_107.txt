@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 9
+3 6
+5039 12021 14499 17063 20426 12658
+5318 14235 16200 19151 22622 13945
+7069 18741 21429 25323 29946 18468

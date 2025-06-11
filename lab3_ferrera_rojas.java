@@ -4,13 +4,11 @@ import java.util.*;
 public class lab3_ferrera_rojas {
     // Clase para almacenar estadísticas de cada archivo procesado
     private static class Estadisticas {
-        String nombreArchivo;
         long tiempo;
         long memoria;
         int hebras;
 
-        public Estadisticas(String nombreArchivo, long tiempo, long memoria, int hebras) {
-            this.nombreArchivo = nombreArchivo;
+        public Estadisticas(long tiempo, long memoria, int hebras) {
             this.tiempo = tiempo;
             this.memoria = memoria;
             this.hebras = hebras;
@@ -55,7 +53,6 @@ public class lab3_ferrera_rojas {
                 
                 // Guardar estadísticas
                 resumenGlobal.add(new Estadisticas(
-                    archivo.getName(), 
                     tiempoTotal, 
                     memoriaUsada, 
                     hebrasUsadas
@@ -194,7 +191,7 @@ public class lab3_ferrera_rojas {
             }
             
             // Totales y promedios
-            pw.println("\nResumen Final:");
+            pw.println("Resumen Final:");
             pw.println("--------------");
             pw.println("Total archivos procesados: " + archivosProcesados);
             pw.println("Tiempo total de procesamiento: " + tiempoTotal + " ms");

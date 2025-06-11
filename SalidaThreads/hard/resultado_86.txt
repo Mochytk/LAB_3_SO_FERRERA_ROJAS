@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 2 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 5
+26753 26753 22103 7192 27249
+27687 27687 22539 7260 27885

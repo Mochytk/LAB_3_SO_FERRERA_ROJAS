@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 3
+12555 36252 4263
+21377 61902 7287
+14645 43406 5107
+15527 46880 5563
+17988 54959 6565
+19240 57590 6850

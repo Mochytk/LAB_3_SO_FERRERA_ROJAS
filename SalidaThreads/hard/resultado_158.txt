@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 4
+21216 41754 27636 12159
+10049 19769 13062 5730
+11544 22782 15260 6849
+17849 34931 22554 9501
+5590 11080 7560 3495

@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 2
+20949 13615
+19359 12271
+32161 20783
+24218 15834
+13959 8981

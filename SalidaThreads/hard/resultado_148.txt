@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 9
+3 2
+39114 28365
+23900 16674
+3481 2419

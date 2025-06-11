@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 3
+55964 54993 39224
+38012 38037 27044
+37236 37053 26370
+51088 50262 35842
+28260 28575 20280
+51088 50262 35842

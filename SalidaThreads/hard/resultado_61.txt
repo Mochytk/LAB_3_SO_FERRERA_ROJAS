@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 2
+2430 4236
+3060 6662
+1755 3378
+1350 3150
+2205 3472
+3060 6662

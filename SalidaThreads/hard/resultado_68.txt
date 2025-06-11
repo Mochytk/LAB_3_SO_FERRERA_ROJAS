@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 3
+27524 46857 20965
+24378 41799 19555
+26422 45036 20919
+38559 66038 30650
+25559 43657 19767
+35311 60227 27743

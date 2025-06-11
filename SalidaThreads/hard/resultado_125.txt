@@ -1,0 +1,11 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 18
+6 2
+20524 7682
+26012 10116
+6601 2481
+29351 11233
+15036 6224
+16079 6015

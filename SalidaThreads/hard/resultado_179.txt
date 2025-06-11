@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 2 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 4
+84168 103294 76468 86220
+104305 130125 95752 107881

@@ -1,0 +1,10 @@
+# Simétrica: false
+# Tiempo de procesamiento: 4 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 15
+5 2
+5522 12842
+9279 21591
+7912 18400
+9413 21989
+6082 13978

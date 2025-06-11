@@ -1,0 +1,8 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 9
+3 5
+87375 96886 52338 48887 51632
+86165 95806 51677 47752 49212
+96537 107706 55953 52857 57528

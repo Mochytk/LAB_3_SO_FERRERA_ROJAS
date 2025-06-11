@@ -1,0 +1,7 @@
+# Simétrica: false
+# Tiempo de procesamiento: 3 ms
+# Memoria usada: 0 KB
+# Hebras utilizadas: 6
+2 6
+8671 5072 1716 7235 5679 7202
+3102 1839 612 2595 2043 2559
