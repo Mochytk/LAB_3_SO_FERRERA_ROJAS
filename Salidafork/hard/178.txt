@@ -1,9 +1,0 @@
-# Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 3764
-# Matriz resultado: 4x5
-# Es simetrica: NO
-4 5
-10675 16761 25479 8356 17123 
-20414 31810 47603 15434 32169 
-10620 16372 23948 7632 16316 
-17273 26923 40313 13076 27237 

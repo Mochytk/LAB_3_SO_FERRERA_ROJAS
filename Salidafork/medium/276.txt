@@ -1,8 +1,0 @@
-# Tiempo de ejecucion (ms): 0
-# Uso de memoria (KB): 2180
-# Matriz resultado: 3x3
-# Es simetrica: NO
-3 3
-2277 2022 1634 
-665 610 442 
-1781 1874 1378 

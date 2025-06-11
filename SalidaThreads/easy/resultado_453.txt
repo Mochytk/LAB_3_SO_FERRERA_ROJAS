@@ -1,9 +1,0 @@
-# Tiempo de multiplicación: 0 ms
-# Memoria usada: 0 KB
-# Hebras utilizadas: 5
-5 4
-135 129 121 157
-120 136 103 161
-101 116 87 119
-159 119 142 155
-119 66 121 122

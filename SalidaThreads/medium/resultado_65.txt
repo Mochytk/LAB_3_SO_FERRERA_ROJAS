@@ -1,9 +1,0 @@
-# Simétrica: false
-# Tiempo de procesamiento: 2 ms
-# Memoria usada: 0 KB
-# Hebras utilizadas: 8
-4 5
-2443 767 2039 1075 2302
-1846 482 1583 694 1642
-1576 708 1223 952 1698
-2523 1027 2004 1395 2612

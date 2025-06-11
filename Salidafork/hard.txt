@@ -1,2 +1,0 @@
-Tiempo total de ejecucion (ms): 181
-Uso máximo de memoria (KB): 3764

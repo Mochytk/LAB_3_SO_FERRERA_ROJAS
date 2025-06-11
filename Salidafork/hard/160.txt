@@ -1,7 +1,0 @@
-# Tiempo de ejecucion (ms): 0
-# Uso de memoria (KB): 3764
-# Matriz resultado: 2x6
-# Es simetrica: NO
-2 6
-38507 11764 32575 32389 23030 16603 
-51338 15778 43312 43207 30731 22276 
