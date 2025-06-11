@@ -1,5 +1,5 @@
-# Tiempo de ejecucion (ms): 1
-# Uso de memoria (KB): 2168
+# Tiempo de ejecucion (ms): 0
+# Uso de memoria (KB): 2148
 # Matriz resultado: 2x3
 2 3
 51 78 48 
